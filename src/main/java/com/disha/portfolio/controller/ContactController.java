@@ -3,7 +3,7 @@ package com.disha.portfolio.controller;
 import com.disha.portfolio.dto.ContactRequest;
 import com.disha.portfolio.dto.ContactResponse;
 import com.disha.portfolio.service.ContactService;
-//import com.disha.portfolio.service.EmailService;
+import com.disha.portfolio.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ContactController {
 
-//    private final EmailService emailService;
+    private final EmailService emailService;
 //
 //    @PostMapping("/test")
 //    public ResponseEntity<String> testEmail() {
@@ -24,6 +24,16 @@ public class ContactController {
 //
 //        return ResponseEntity.ok("Email sent");
 //    }
+
+    @GetMapping("/mail-test")
+    public String mailTest() throws Exception {
+        emailService.sendAutoReply(
+                "Disha",
+                "yourpersonalemail@gmail.com",
+                "SMTP Test"
+        );
+        return "sent";
+    }
 
     private final ContactService service;
 

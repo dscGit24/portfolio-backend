@@ -1,5 +1,6 @@
 package com.disha.portfolio.service;
 
+import jakarta.annotation.PostConstruct;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -30,6 +31,11 @@ public class EmailService {
 //
 //        mailSender.send(message);
 //    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("MAIL USERNAME = " + System.getenv("MAIL_USERNAME"));
+    }
 
     private final JavaMailSender mailSender;
 
