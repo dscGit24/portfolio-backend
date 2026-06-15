@@ -30,28 +30,28 @@ public class ContactService {
 
         repository.save(message);
 
-        try {
-
-            emailService.sendContactNotification(
-                    request.getName(),
-                    request.getEmail(),
-                    request.getSubject(),
-                    request.getMessage()
-            );
-            emailService.sendAutoReply(
-                    request.getName(),
-                    request.getEmail(),
-                    request.getSubject()
-            );
-
-        } catch (Exception e) {
-
-            log.error(
-                    "Email notification failed for contact: {}",
-                    request.getEmail(),
-                    e
-            );
-
-        }
+//        try {
+//
+//            emailService.sendContactNotification(
+//                    request.getName(),
+//                    request.getEmail(),
+//                    request.getSubject(),
+//                    request.getMessage()
+//            );
+//            emailService.sendAutoReply(
+//                    request.getName(),
+//                    request.getEmail(),
+//                    request.getSubject()
+//            );
+//
+//        } catch (Exception e) {
+//
+//            log.error(
+//                    "Email notification failed for contact: {}",
+//                    request.getEmail(),
+//                    e
+//            );
+//
+//        }
     }
 }

@@ -25,15 +25,15 @@ public class ContactController {
 //        return ResponseEntity.ok("Email sent");
 //    }
 
-    @GetMapping("/mail-test")
-    public String mailTest() throws Exception {
-        emailService.sendAutoReply(
-                "Disha",
-                "yourpersonalemail@gmail.com",
-                "SMTP Test"
-        );
-        return "sent";
-    }
+//    @GetMapping("/mail-test")
+//    public String mailTest() throws Exception {
+//        emailService.sendAutoReply(
+//                "Disha",
+//                "yourpersonalemail@gmail.com",
+//                "SMTP Test"
+//        );
+//        return "sent";
+//    }
 
     private final ContactService service;
 
